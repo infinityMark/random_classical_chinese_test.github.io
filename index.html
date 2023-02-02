@@ -41,6 +41,8 @@
 
             font-size: 26px;
             float: left;
+
+            border-left: 10px solid #123B57;
         }
         #a{
             color: #ffffff;
@@ -189,7 +191,7 @@
             /* margin-left: 10px; */
             float: left;
             left: 10%;
-            bottom: 0%;
+            bottom: 17%;
         }
         #for_unknow_number{
             /* display: none; */
@@ -198,15 +200,89 @@
             position: absolute;
             margin-right: 10px;
             float: right;
-            bottom: 0%;
+            bottom: 17%;
             right: 10%;
+        }
+        #know_unknow_company{
+            width: 200px;
+            height: 20px;
+            background-color: #6a6a6a;
+
+            position: absolute;
+            /* text-align: center; */
+            bottom: 17%;
+            left: 50%;
+            /* margin: 0 auto; */
+            /* right: 50%; */
+            transform: translate(-50%,-50%);
+        }
+        #for_know_number_company{
+            width: auto;
+            height: 20px;
+            background-color: #8be746;
+
+            position: absolute;
+            /* text-align: center; */
+            bottom: 17%;
+            left: 50%;
+            /* margin: 0 auto; */
+            /* right: 50%; */
+            transform: translate(-50%,-50%);
+
+            z-index: 999;
+        }
+        @media only screen and (max-width: 1300px){
+            #title_page{
+                border-left: 14px solid #123B57;
+                font-size: 40px;
+            }
+            .material-symbols-outlined{
+                font-size: 100px;
+            }
+            #the_final_return{
+                width: 550px;
+                height: 500px;
+                font-size: 30px;
+
+                left: 60%;
+            }
+            #start_btn{
+                left:60%;
+                border: 4px solid #123B57;
+            }
+            .important_number{
+                font-size: 40px;
+            }
+            #for_know_number{
+                bottom: 8%;
+                left: 43%;
+            }
+            #for_unknow_number{
+                bottom: 8%;
+                right: 21%;
+            }
+            #a{
+                font-size: 36px;
+                display: inline;
+                top: 20%;
+                left: 5%;
+                color: #000000;
+            }
+            #b{
+                font-size: 36px;
+                display: inline;
+                top: 30%;
+                left: 5%;
+                color: #000000;
+                margin-left: 0px;
+            }
         }
     </style>
 </head>
 <body id="background_color">
     <div id="head_line">
         <div id="other_page">
-            <h1 id="title_page" style="border-left: 10px solid #123B57;">&nbsp;&nbsp;随机字词</h1>
+            <h1 id="title_page">&nbsp;&nbsp;随机字词</h1>
             <div id="move_choose">
                 <a href="https://infinitymark.github.io/check_classical_chinese_final.github.io/"><h1 id="a">查字词</h1></a>
                 <a href="https://infinitymark.github.io/article.github.io/"><h1 id="b">课文</h1></a>
@@ -230,9 +306,12 @@
         <h2 id="unknow">不知</h2>
     </div>
     <div>
-        <h2 id="for_know_number"></h2>
-        <h2 id="know_unknow_company"></h2>
-        <h2 id="for_unknow_number"></h2>
+        <h2 id="for_know_number" class="important_number"></h2>
+        
+        <h2 id="for_unknow_number" class="important_number"></h2>
+    </div>
+    <!-- <div id="for_know_number_company"></div>
+    <div id="know_unknow_company"> -->
     </div>
 
     <script>
@@ -503,19 +582,33 @@
         let for_unknow_number=document.getElementById("for_unknow_number")
         let unknow_number=0
         let know_number=0
+        let for_all=0
         let know_unknow_company=document.getElementById("know_unknow_company")
+        let for_know_number_company=document.getElementById("for_know_number_company")
             
         know.addEventListener("click",function(){              
                 know_number=know_number+1
+                for_all=for_all+1
                 for_know_number.innerText=know_number
+
+                console.log(for_all)
                 // console.log(know_number)
                 // next.style.display="flex"
         })
         unknow.addEventListener("click",function(){
                 // next.style.display="flex"
                 unknow_number=unknow_number+1
+                for_all=for_all+1
                 for_unknow_number.innerText=unknow_number
         })
+        // know_unknow_company.style.
+        // let for_all_number=parseInt(for_all)
+        // let know_number_a=parseInt(know_number)
+        // let a_b=parseInt(((for_all_number/know_number_a)*200))
+        // for_know_number_company.style.width=a_b+"px"
+        // // console.log(for_know_number_company)
+        // console.log(a_b)
+        
 
         let a=document.getElementById("a")
         let b=document.getElementById("b")
