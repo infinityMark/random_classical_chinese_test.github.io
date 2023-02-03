@@ -13,12 +13,18 @@
     <title>文言文随机</title>
 
     <style>
-        body{
-            font-family: 'Noto Sans HK', sans-serif;
-            /* font-family: 'Ma Shan Zheng', cursive; */
-            /* font-family: 'Noto Sans HK', sans-serif; */
-        }
         #head_line{margin-top: 20px;}
+        #big_title_page{
+            color: #000000;
+            margin-top: 0px;
+            margin-left: 10px;
+
+            font-size: 26px;
+            float: left;
+
+            border-left: 10px solid #123B57;
+            display: none;
+        }
         .material-symbols-outlined {
             font-size: 40px;
             margin-right: 10px;
@@ -136,6 +142,7 @@
             margin-left: 10px;
             float: left;
             bottom: 0%;
+            /* font-family: 'Noto Sans HK', sans-serif; */
         }
         #unknow{
             color:#e42232;
@@ -192,6 +199,7 @@
             float: left;
             left: 10%;
             bottom: 17%;
+            font-family: 'Noto Sans HK', sans-serif;
         }
         #for_unknow_number{
             /* display: none; */
@@ -202,6 +210,8 @@
             float: right;
             bottom: 17%;
             right: 10%;
+
+            font-family: 'Noto Sans HK', sans-serif;
         }
         #know_unknow_company{
             width: 200px;
@@ -231,8 +241,15 @@
 
             z-index: 999;
         }
-        @media only screen and (max-width: 1300px){
+        @media only screen and (min-width: 1200px){
             #title_page{
+                border-left: 14px solid #123B57;
+                font-size: 40px;
+                display: none;
+            }
+
+            #big_title_page{
+                display: inline;
                 border-left: 14px solid #123B57;
                 font-size: 40px;
             }
@@ -245,6 +262,9 @@
                 font-size: 30px;
 
                 left: 60%;
+            }
+            #random_c_chinese_translate{
+                font-size: 40px;
             }
             #start_btn{
                 left:60%;
@@ -283,6 +303,7 @@
     <div id="head_line">
         <div id="other_page">
             <h1 id="title_page">&nbsp;&nbsp;随机字词</h1>
+            <h1 id="big_title_page">&nbsp;&nbsp;随机字词</h1>
             <div id="move_choose">
                 <a href="https://infinitymark.github.io/check_classical_chinese_final.github.io/"><h1 id="a">查字词</h1></a>
                 <a href="https://infinitymark.github.io/article.github.io/"><h1 id="b">课文</h1></a>
@@ -319,6 +340,7 @@
         let light=document.getElementById("light")
         let title_page=document.getElementById("title_page")
         let background_color=document.getElementById("background_color")
+        let big_title_page=document.getElementById("big_title_page")
         let dog=document.getElementById("dog")
         let tu=document.getElementById("tu")
         let time="1s"
@@ -355,6 +377,16 @@
             start_btn.style.backgroundColor=dark
             start_btn.style.color=white
 
+            big_title_page.style.transitionDuration=time
+            big_title_page.style.color=white
+
+            if(window.innerWidth>1200){
+                a.style.transitionDuration=time
+                a.style.color=white
+
+                b.style.transitionDuration=time
+                b.style.color=white
+            }
         })
         light.addEventListener("click",function(){
             background_color.style.transitionDuration="1s"
@@ -369,6 +401,16 @@
 
             start_btn.style.backgroundColor=white
             start_btn.style.color="#000000"
+
+            big_title_page.style.color="#000000"
+
+            if(window.innerWidth>1200){
+                a.style.transitionDuration=time
+                a.style.color="#000000"
+
+                b.style.transitionDuration=time
+                b.style.color="#000000"
+            }
         })
             
         function start_random(){
