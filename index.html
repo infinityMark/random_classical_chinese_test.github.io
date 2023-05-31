@@ -316,7 +316,7 @@
             <h1 id="big_title_page">&nbsp;&nbsp;随机字词</h1>
             <div id="move_choose">
                 <a href="https://infinitymark.github.io/check_classical_chinese_final.github.io/"><h1 id="a">查字词</h1></a>
-                <a href="https://infinitymark.github.io/article.github.io/"><h1 id="b">课文</h1></a>
+                <a href="https://infinitymark.github.io/random_article.github.io/"><h1 id="b">课文</h1></a>
                 <!-- <a href=""><h1>木鱼</h1></a> -->
                 <h1 id="back">返回</h1>    
             </div>    
@@ -552,15 +552,15 @@
             // for (let index = 0; index <50; index++) {
             //     console.log(parseInt(Math.random()*50))
             // }
-            if(classical_chinese_list.length==classical_chinese_traslate_list.length && classical_chinese_traslate_list.length==random_c_chinese_paragraphs_list.length){
-                console.log("0至"+(classical_chinese_list.length-1))
-                console.log("全部List数字都是一样")
-                for(let i=0;i<=classical_chinese_list.length-1;i++){
-                    console.log(classical_chinese_list[i].length)
-                    // console.log(classical_chinese_traslate_list[i].length)
-                    // console.log(random_c_chinese_paragraphs_list[i].length)
-                }
-            }
+            // if(classical_chinese_list.length==classical_chinese_traslate_list.length && classical_chinese_traslate_list.length==random_c_chinese_paragraphs_list.length){
+            //     // console.log("0至"+(classical_chinese_list.length-1))
+            //     // console.log("全部List数字都是一样")
+            //     for(let i=0;i<=classical_chinese_list.length-1;i++){
+            //         console.log(classical_chinese_list[i].length)
+            //         // console.log(classical_chinese_traslate_list[i].length)
+            //         // console.log(random_c_chinese_paragraphs_list[i].length)
+            //     }
+            // }
             
             // 0至10的数
             // let begin_choose=parseInt((Math.random())*10)
@@ -587,6 +587,14 @@
             let random_c_chinese_paragraphs=document.getElementById("random_c_chinese_paragraphs")
             let time="1s"            
             random_c_chinese_translate.style.display="none"
+
+            // for (let index = 0; index <= classical_chinese_list.length; index++) {
+            //     for (let i = 0; i <=classical_chinese_list[index].length-1; i++) {
+            //         document.write(classical_chinese_list[index][i] + " ：" + classical_chinese_traslate_list[index][i])
+            //         document.write("<br>")
+            //         document.write("<br>")
+            //     }
+            // }
 
             // setTimeout(try_a,1000)
             // function try_a() {
