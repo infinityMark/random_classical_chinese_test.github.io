@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,9 +11,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK&display=swap" rel="stylesheet">
-    <title>文言文随机</title>
+    <title>--English--</title>
 
     <style>
+        body{
+            font-family: 'Ma Shan Zheng', cursive;
+            font-family: 'Noto Sans HK', sans-serif;
+            font-family: 'VT323', monospace;
+        }
         #head_line{margin-top: 20px;}
         #big_title_page{
             color: #000000;
@@ -53,7 +59,7 @@
         #a{
             color: #ffffff;
             display: none;
-            float: left;
+            /* float: left; */
 
             position: absolute;
             /* transition-duration: 1s; */
@@ -63,11 +69,11 @@
         #b{
             color: #ffffff;
             display: none;
-            float: left;
+            /* float: left; */
 
             position: absolute;
             top: 0%;
-            margin-left: -140px;
+            /* margin-left: -140px; */
             z-index: 999;
         }
         #back{
@@ -120,7 +126,7 @@
 
         #the_final_return{
             width: 340px;
-            height: 340px;
+            height: 400px;
             background-color: #207fbe;
             border-radius: 22px;
             
@@ -165,7 +171,7 @@
         #mark{float: right;}
         #random_c_chinese_paragraphs{
             position: absolute;
-            top: 74%;
+            top: 89%;
             left: 50%;
             transform: translate(-50%,-50%);
         }
@@ -241,6 +247,27 @@
 
             z-index: 999;
         }
+        .selection{
+            text-align: center;
+        }
+        .s_a{
+            position: absolute;
+            left: 15%;
+        }
+        .s_b{
+            position: absolute;
+            right: 15%;
+        }
+        .s_c{
+            position: absolute;
+            top: 60%;
+            left: 15%;
+        }
+        .s_d{
+            position: absolute;
+            top: 60%;
+            right: 15%;
+        }
         @media only screen and (min-width: 1000px){
             #title_page{
                 border-left: 14px solid #123B57;
@@ -293,16 +320,16 @@
             }
             #a{
                 font-size: 36px;
-                display: inline;
+                /* display: inline;
                 top: 20%;
-                left: 5%;
+                left: 5%; */
                 color: #000000;
             }
             #b{
                 font-size: 36px;
-                display: inline;
+                /* display: inline;
                 top: 30%;
-                left: 5%;
+                left: 5%; */
                 color: #000000;
                 margin-left: 0px;
             }
@@ -312,8 +339,8 @@
 <body id="background_color">
     <div id="head_line">
         <div id="other_page">
-            <h1 id="title_page">&nbsp;&nbsp;随机字词</h1>
-            <h1 id="big_title_page">&nbsp;&nbsp;随机字词</h1>
+            <h1 id="title_page">&nbsp;文言文字词</h1>
+            <h1 id="big_title_page">&nbsp;&nbsp;随机文言文字词</h1>
             <div id="move_choose">
                 <a href="https://infinitymark.github.io/check_classical_chinese_final.github.io/"><h1 id="a">查字词</h1></a>
                 <a href="https://infinitymark.github.io/random_article.github.io/"><h1 id="b">课文</h1></a>
@@ -326,16 +353,18 @@
         <span class="material-symbols-outlined" id="light">light_mode</span>
     </div>
 
-    <button id="start_btn" onclick="start_random()">来吧</button>
+    <button id="start_btn" onclick="start_random()">开始</button>
     <img src="https://raw.githubusercontent.com/infinityMark/-infinityMark.github.io/main/tu.png" alt="" id="tu">
     <img src="https://raw.githubusercontent.com/infinityMark/-infinityMark.github.io/main/bulue_dog.png" alt="" id="dog">
     <div id="the_final_return">
         <h1 id="random_c_chinese"></h1>
-        <h1 id="random_c_chinese_translate"></h1>
+        <h1 id="random_c_chinese_translate">
         <h3 id="random_c_chinese_paragraphs"></h3>
-        <h2 id="know">知道</h2>
-        <h2 id="next">下一个</h2>
-        <h2 id="unknow">不知</h2>
+
+        <h2 class="selection s_a"></h2>
+        <h2 class="selection s_b"></h2>
+        <h2 class="selection s_c"></h2>
+        <h2 class="selection s_d"></h2>
     </div>
     <div>
         <h2 id="for_know_number" class="important_number"></h2>
@@ -429,7 +458,7 @@
         function start_random(){
             //         需要的函数   
             //  二维矩阵   [],
-            // ["","","","","","","","","",""],
+            // ["","","","","","","","",""],
 
             let classical_chinese_list=[
                 //师说
@@ -565,7 +594,7 @@
                 ["悲夫","而为秦人积威之所劫","而为秦人积威之所劫","而为秦人积威之所劫","以趋于亡","为国者无使为积威之所劫哉","为国者无使为积威之所劫哉","夫六国与秦皆诸侯","而犹有可以不赂而胜之之势","而从六国破亡之故事","而从六国破亡之故事"]
                 //岳阳楼记
             ]
-            
+
             //测试
             // let test_time=parseInt(15)
             // console.log(classical_chinese_list[test_time].length())
@@ -589,9 +618,10 @@
             
             // 0至10的数
             // let begin_choose=parseInt((Math.random())*10)
-            let begin_choose_arry=["0","1","2","3","4","5","6","6","3","4"]
             let begin_choose_a=parseInt(Math.random()*10)
-            let begin_choose=parseInt(begin_choose_arry[begin_choose_a])
+            let begin_choose_b=parseInt(Math.random()*100)
+            let is_number = begin_choose_a*begin_choose_b
+            let is_arry = [parseInt(is_number/4),parseInt(is_number/2),parseInt((is_number*3)/4)]
             // let classical_chinese_list_number=classical_chinese_list.length
             // let multiple=String(classical_chinese_list_number).length
             // let ten_multiple=(multiple)*10
@@ -603,14 +633,22 @@
             // console.log(random_number)
 
             let random_c_chinese_translate=document.getElementById("random_c_chinese_translate")
+            let selection = document.getElementsByClassName("selection")
             let random_c_chinese=document.getElementById("random_c_chinese")
-            let know=document.getElementById("know")
-            let unknow=document.getElementById("unknow")
             let next=document.getElementById("next")
             let the_final_return=document.getElementById("the_final_return")
             let start_btn=document.getElementById("start_btn")
             let random_c_chinese_paragraphs=document.getElementById("random_c_chinese_paragraphs")
-            let time="1s"            
+            let time="1s"
+
+            let choose_a = false
+            let choose_b = false
+            let choose_c = false
+            let choose_d = false
+
+            for(let i = 0;i<=3;i++){
+                selection[i].style.color = "#ffffff"
+            }
             random_c_chinese_translate.style.display="none"
 
             // for (let index = 0; index <= classical_chinese_list.length; index++) {
@@ -628,68 +666,89 @@
             //     start_btn.style.backgroundColor="#123B57"    
             // }
             
-            know.style.display="flex"
-            unknow.style.display="flex"
             the_final_return.style.display="block"
             start_btn.style.transitionDuration=time
             start_btn.innerText="下一个"
             
-            random_c_chinese.innerText=classical_chinese_list[begin_choose][random_number]
-            random_c_chinese_paragraphs.innerText=random_c_chinese_paragraphs_list[begin_choose][random_number]
+            if((begin_choose_a+1)*(begin_choose_b+1)<=is_arry[0]){
+                choose_a = true
+            }
+            if((begin_choose_a+1)*(begin_choose_b+1)>=is_arry[0] && (begin_choose_a+1)*(begin_choose_b+1)<=is_arry[1]){
+                choose_b = true
+            }
+            if((begin_choose_a+1)*(begin_choose_b+1)>=is_arry[1] && (begin_choose_a+1)*(begin_choose_b+1)<=is_arry[2]){
+                choose_c = true
+            }
+            if((begin_choose_a+1)*(begin_choose_b+1)>=is_arry[2]){
+                choose_d = true
+            }
+            // console.log(choose_a)
 
-            random_c_chinese_paragraphs.style.transitionDuration=time
-            random_c_chinese_paragraphs.style.marginTop="50px"
+            if(choose_a==true){
+                selection[0].innerHTML = classical_chinese_traslate_list[begin_choose_a][begin_choose_b]
+                selection[1].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b+1]
+                selection[2].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b-1]
+                selection[3].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b+2]
+            }
+            if(choose_b==true){
+                selection[1].innerHTML = classical_chinese_traslate_list[begin_choose_a][begin_choose_b]
+                selection[0].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b+1]
+                selection[3].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b-1]
+                selection[2].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b+2]
+            }
+            if(choose_c==true){
+                selection[3].innerHTML = classical_chinese_traslate_list[begin_choose_a][begin_choose_b]
+                selection[0].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b+1]
+                selection[2].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b-1]
+                selection[1].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b+2]
+            }
+            if(choose_d==true){
+                selection[3].innerHTML = classical_chinese_traslate_list[begin_choose_a][begin_choose_b]
+                selection[1].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b+1]
+                selection[2].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b-1]
+                selection[0].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b+2]
+            }
+            random_c_chinese.innerText = classical_chinese_list[begin_choose_a][begin_choose_b]
+            random_c_chinese_paragraphs.innerText = random_c_chinese_paragraphs_list[begin_choose_a][begin_choose_b]
+
+            selection[0].addEventListener("click",function(){
+                if(choose_a == true){
+                    // selection[0].style.left = "50%"
+                    selection[0].style.color = "#00ff00"
+                }
+                else{
+                    selection[0].style.color = "#ff0000"
+                }
+            })
+            selection[1].addEventListener("click",function(){
+                if(choose_b == true){
+                    selection[1].style.color = "#00ff00"
+                }
+                else{
+                    selection[1].style.color = "#ff0000"
+                }
+            })
+            selection[2].addEventListener("click",function(){
+                if(choose_c == true){
+                    selection[2].style.color = "#00ff00"
+                }
+                else{
+                    selection[2].style.color = "#ff0000"
+                }
+            })
+            selection[3].addEventListener("click",function(){
+                if(choose_d == true){
+                    selection[3].style.color = "#00ff00"
+                }
+                else{
+                    selection[3].style.color = "#ff0000"
+                }
+            })
+            
             // classical_chinese_traslate_list.splice(classical_chinese_traslate_list[random_number],1)
             // random_c_chinese_paragraphs_list.splice(random_c_chinese_paragraphs_list[random_number],1)
             // console.log(classical_chinese_list)
             // random_c_chinese_translate.style.display="none"
-
-            know.addEventListener("click",function(){
-                // the_final_return.style.transitionDuration=time
-                // the_final_return.style.rotate="20deg"
-                for_know_number.style.display="inline" 
-                
-                know.style.transitionDuration=time02
-                know.style.display="none"
-                unknow.style.transitionDuration=time02
-                unknow.style.display="none"               
-
-                setTimeout(test,500)
-                function test(){
-                    random_c_chinese_translate.style.display="flex"
-                    random_c_chinese_translate.style.justifyContent="center"
-                    random_c_chinese_translate.style.alignItems="center"
-
-                    random_c_chinese_translate.style.display="block"
-                    random_c_chinese_translate.innerText=classical_chinese_traslate_list[begin_choose][random_number]
-                    the_final_return.style.transitionDuration=time
-                    // the_final_return.style.rotate="0deg"
-                }
-                // next.style.display="flex"
-        })
-        unknow.addEventListener("click",function(){
-                // next.style.display="flex"
-                // the_final_return.style.transitionDuration=time02
-                // the_final_return.style.rotate="20deg"
-                for_unknow_number.style.display="inline"
-
-                know.style.transitionDuration=time02
-                know.style.display="none"
-
-                unknow.style.transitionDuration=time02
-                unknow.style.display="none"
-                setTimeout(test,500)
-                function test(){
-                    random_c_chinese_translate.style.display="flex"
-                    random_c_chinese_translate.style.justifyContent="center"
-                    random_c_chinese_translate.style.alignItems="center"
-
-                    random_c_chinese_translate.style.display="block"
-                    random_c_chinese_translate.innerText=classical_chinese_traslate_list[begin_choose][random_number]
-                    the_final_return.style.transitionDuration=time
-                    // the_final_return.style.rotate="0deg"    
-                }
-        })
         }
 
         let for_know_number=document.getElementById("for_know_number")
@@ -700,21 +759,6 @@
         let know_unknow_company=document.getElementById("know_unknow_company")
         let for_know_number_company=document.getElementById("for_know_number_company")
             
-        know.addEventListener("click",function(){              
-                know_number=know_number+1
-                for_all=for_all+1
-                for_know_number.innerText=know_number
-
-                console.log(for_all)
-                // console.log(know_number)
-                // next.style.display="flex"
-        })
-        unknow.addEventListener("click",function(){
-                // next.style.display="flex"
-                unknow_number=unknow_number+1
-                for_all=for_all+1
-                for_unknow_number.innerText=unknow_number
-        })
         // know_unknow_company.style.
         // let for_all_number=parseInt(for_all)
         // let know_number_a=parseInt(know_number)
