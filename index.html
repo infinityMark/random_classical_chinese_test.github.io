@@ -351,7 +351,7 @@
     <div id="head_line">
         <div id="other_page">
             <h1 id="title_page">&nbsp;文言文字词</h1>
-            <h1 id="big_title_page">&nbsp;&nbsp;文言文字词</h1>
+            <h1 id="big_title_page">&nbsp;文言文字词</h1>
             <div id="move_choose">
                 <a href="https://infinitymark.github.io/check_classical_chinese_final.github.io/"><h1 id="a">查字词</h1></a>
                 <a href="https://infinitymark.github.io/random_article.github.io/"><h1 id="b">课文</h1></a>
@@ -682,17 +682,27 @@
             the_final_return.style.display="block"
             start_btn.style.transitionDuration=time
             start_btn.innerText="下一个"
+
+            let choose_arry = 
+            ["a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d",
+            "a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d",
+            "a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d",
+            "a","b","c","d","a","b","c","d"
+            ]
             
-            if((begin_choose_a+1)*(begin_choose_b+1)<=is_arry[0]){
+            
+            let choose_arry_num = parseInt(Math.random()*80)
+            
+            if(choose_arry[choose_arry_num]=="a"){
                 choose_a = true
             }
-            if((begin_choose_a+1)*(begin_choose_b+1)>=is_arry[0] && (begin_choose_a+1)*(begin_choose_b+1)<=is_arry[1]){
+            if(choose_arry[choose_arry_num]=="b"){
                 choose_b = true
             }
-            if((begin_choose_a+1)*(begin_choose_b+1)>=is_arry[1] && (begin_choose_a+1)*(begin_choose_b+1)<=is_arry[2]){
+            if(choose_arry[choose_arry_num]=="c"){
                 choose_c = true
             }
-            if((begin_choose_a+1)*(begin_choose_b+1)>=is_arry[2]){
+            if(choose_arry[choose_arry_num]=="d"){
                 choose_d = true
             }
             // console.log(choose_a)
