@@ -633,8 +633,6 @@
             // let begin_choose=parseInt((Math.random())*10)
             let begin_choose_a=parseInt(Math.random()*10)
             let begin_choose_b=parseInt(Math.random()*100)
-            let is_number = begin_choose_a*begin_choose_b
-            let is_arry = [parseInt(is_number/4),parseInt(is_number/2),parseInt((is_number*3)/4)]
             // let classical_chinese_list_number=classical_chinese_list.length
             // let multiple=String(classical_chinese_list_number).length
             // let ten_multiple=(multiple)*10
@@ -683,29 +681,36 @@
             start_btn.style.transitionDuration=time
             start_btn.innerText="下一个"
 
+
             let choose_arry = 
-            ["a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d",
+            [
+            "a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d",
             "a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d",
             "a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d",
             "a","b","c","d","a","b","c","d"
             ]
             
-            
             let choose_arry_num = parseInt(Math.random()*79)
-            
+            // console.log(choose_arry[choose_arry_num])
             if(choose_arry[choose_arry_num]=="a"){
                 choose_a = true
             }
-            if(choose_arry[choose_arry_num]=="b"){
+            else if(choose_arry[choose_arry_num]=="b"){
                 choose_b = true
             }
-            if(choose_arry[choose_arry_num]=="c"){
+            else if(choose_arry[choose_arry_num]=="c"){
                 choose_c = true
             }
-            if(choose_arry[choose_arry_num]=="d"){
+            else if(choose_arry[choose_arry_num]=="d"){
                 choose_d = true
             }
-            // console.log(choose_a)
+            console.log(choose_a)
+            console.log(choose_b)
+            console.log(choose_c)
+            console.log(choose_d)
+
+            random_c_chinese.innerText = classical_chinese_list[begin_choose_a][begin_choose_b]
+            random_c_chinese_paragraphs.innerText = random_c_chinese_paragraphs_list[begin_choose_a][begin_choose_b]
 
             if(choose_a==true){
                 selection[0].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b]
@@ -713,29 +718,27 @@
                 selection[2].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b-1]
                 selection[3].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b+2]
             }
-            if(choose_b==true){
+            else if(choose_b==true){
                 selection[1].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b]
                 selection[0].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b+1]
                 selection[3].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b-1]
                 selection[2].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b+2]
             }
-            if(choose_c==true){
-                selection[3].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b]
+            else if(choose_c==true){
+                selection[2].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b]
                 selection[0].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b+1]
-                selection[2].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b-1]
+                selection[3].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b-1]
                 selection[1].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b+2]
             }
-            if(choose_d==true){
-                selection[2].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b]
+            else if(choose_d==true){
+                selection[3].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b]
                 selection[1].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b+1]
-                selection[3].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b-1]
+                selection[2].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b-1]
                 selection[0].innerText = classical_chinese_traslate_list[begin_choose_a][begin_choose_b+2]
             }
-            random_c_chinese.innerText = classical_chinese_list[begin_choose_a][begin_choose_b]
-            random_c_chinese_paragraphs.innerText = random_c_chinese_paragraphs_list[begin_choose_a][begin_choose_b]
 
             selection[0].addEventListener("click",function(){
-                if(choose_a == true){
+                if(choose_a==true){
                     // selection[0].style.left = "50%"
                     selection[0].style.color = "#00ff00"
                 }
@@ -744,7 +747,7 @@
                 }
             })
             selection[1].addEventListener("click",function(){
-                if(choose_b == true){
+                if(choose_b==true){
                     selection[1].style.color = "#00ff00"
                 }
                 else{
@@ -752,7 +755,7 @@
                 }
             })
             selection[2].addEventListener("click",function(){
-                if(choose_c == true){
+                if(choose_c==true){
                     selection[2].style.color = "#00ff00"
                 }
                 else{
@@ -760,7 +763,7 @@
                 }
             })
             selection[3].addEventListener("click",function(){
-                if(choose_d == true){
+                if(choose_d==true){
                     selection[3].style.color = "#00ff00"
                 }
                 else{
